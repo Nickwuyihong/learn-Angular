@@ -1,0 +1,29 @@
+.bar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  height: 10vh;
+  align-items: center;
+  z-index: 99;
+  background-color: #fff;
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > img {
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 0.3rem #000;
+    }
+    .selected {
+      color: #fb7299;
+    }
+    .unselected {
+      color: #000;
+    }
+  }
+}

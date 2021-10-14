@@ -1,0 +1,43 @@
+.container{
+  width: 100vw;
+  overflow: scroll;
+  background: blueviolet;
+  padding: 0;
+  display: flex;
+  margin-top: 10vh;
+  >object{
+    width: 70px;
+    height: 40px;
+    top: 100px;
+    left: 50%;
+    position: absolute;
+  }
+}
+
+.bg{
+  width: 100vw;
+}
+
+.sea{
+  width: 70px;
+  height: 40px;
+  top: 150px;
+  left: 30%;
+  position: absolute;
+}
+
+.left{
+  width: calc(5 * 69px);
+  height: calc(5 * 17px);
+  top: 781px;
+  left: -24px;
+  position: absolute;
+}
+
+.right{
+  width: 87px;
+  height: 105px;
+  top: 899px;
+  right: 0;
+  position: absolute;
+}

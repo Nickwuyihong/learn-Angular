@@ -1,0 +1,44 @@
+<div class="content">
+  <div class="top-bar">
+    <img src="../../assets/image/return_ok.png" alt="" (click)="back()">
+    <span class="title">排行榜</span>
+    <span>排行规则</span>
+  </div>
+  <div class="myRank">
+    <div class="my">
+      <div class="head">
+        <img src="https://angular.cn/generated/images/guide/start/app-components.png" alt="">
+        <span class="name">name</span>
+      </div>
+      <div class="pussy">
+        <span class="like">点赞数</span>&nbsp;
+        <span class="like2">114514</span>
+        <span>|</span>
+        <span class="rank">排名</span>&nbsp;
+        <span class="rank2">1919</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="top">
+      <span>排名</span>
+      <span>姓名/机构</span>
+      <span>反馈建议标题</span>
+      <span>点赞数</span>
+    </div>
+    <div class="container" style="height: 50vh;">
+      <div class="list" *ngFor="let items of getList()" >
+        <span style="font-size: 13px;color: #999999;">{{items.id}}</span>
+        <div class="head2">
+          <img src="{{items.img}}" alt="">
+          <div class="nd">
+            <span style="font-size: 14px;">{{items.name}}</span>
+            <span style="font-size: 11px;color: #999999;">department</span>
+          </div>
+        </div>
+        <span style="font-size: 12px;color: #666666;">建议标题建议…</span>
+        <span style="font-size: 12px;color: #666666;">99</span>  
+      </div>
+    </div>
+  </div>
+</div>

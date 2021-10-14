@@ -3,15 +3,43 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppTopBarComponent } from './app-top-bar/app-top-bar.component';
+import { AppProductList } from './app-product-list/app-product-list.component';
+import { AppBottomBarComponent } from './app-bottom-bar/app-bottom-bar.component';
+import { BillComponent } from './bill/bill.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SVGComponent } from './learn-svg/svg.component';
+import { MyComponent } from './my/my.component';
+import { Ishiyoniikuikuiku } from './ishiyoniikuikuiku.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { SwiperModule } from 'swiper/angular';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+import { PlayAudioComponent } from './play-audio/play-audio.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppTopBarComponent,
+    AppProductList,
+    AppBottomBarComponent,
+    BillComponent,
+    SVGComponent,
+    NotFoundComponent,
+    MyComponent,
+    Ishiyoniikuikuiku,
+    PlayAudioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    SwiperModule
   ],
+  exports: [Ishiyoniikuikuiku],
   providers: [],
   bootstrap: [AppComponent]
 })

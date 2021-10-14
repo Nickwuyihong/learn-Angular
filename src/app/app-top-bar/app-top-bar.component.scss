@@ -1,0 +1,21 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fb7299;
+  padding: 10px;
+  color: #fff;
+  > button {
+    width: 10rem;
+    background-color: #fff;
+    color: #fb7299;
+  };
+  > button:hover {
+    background-color: #fb7299;
+    color: #fff;
+  };
+}

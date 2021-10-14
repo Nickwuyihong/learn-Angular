@@ -1,0 +1,12 @@
+.xs{
+  background: #00FF00 url('../../assets/image/xs.png') no-repeat fixed center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  > h1{
+    margin: auto;
+    color: aqua;
+  }
+}

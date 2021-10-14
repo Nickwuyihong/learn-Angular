@@ -1,0 +1,8 @@
+<div class="bar">
+  <a class="item" *ngFor="let item of tabList" routerLink="{{item.route}}" routerLinkActive="active" id="{{item.id}}" (click)="onchange($event)">
+    <img src="{{item.img}}" id="{{item.id}}">
+    <span class="{{curIdx == item.id ? 'selected' : 'unselected'}}" id="{{item.id}}">{{item.name}}</span>
+  </a>
+</div>
+
+<router-outlet></router-outlet>
