@@ -10,7 +10,7 @@
     </div>
     <div class="up">
       <div class="left">
-        <img src="../../assets/image/QQ图片20210927172017.png" alt="">
+        <img src="../../assets/image/jiaran.jpg" alt="">
         <span>嘉然今天吃什么</span>
       </div>
       <div class="right">
@@ -19,8 +19,47 @@
         <span>收藏</span>
       </div>
     </div>
-    <div>
-
+    <div class="switcher">
+      <span class="{{curIdx === 0 ? 'pik' : 'blk'}}" (click)="changeSwiper(0)">相关推荐</span>
+      <span class="{{curIdx === 1 ? 'pik' : 'blk'}}" (click)="changeSwiper(1)">评论18.5w</span>
+    </div>
+    <div style="width: 100%;">
+      <div class="anchor {{curIdx === 0 ? 'anchor0' : 'anchor1'}}"></div>
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a class="audioList" routerLink="play-audio">
+            <div class="card" *ngFor="let a of getAudioList()">
+              <div class="card-top">
+                <img src="{{a.img}}" alt="{{a.id}}">
+                <div class="card-msg">
+                  <span>播 {{a.playTimes}}</span>
+                  <span>弹 {{a.comments}}</span>
+                  <span>时 {{a.time}}</span>
+                </div>
+              </div>
+              <div class="card-bottom">
+                <span class="span-top">{{a.title}}</span>
+                <span class="span-bottom">up {{a.up}}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <div class="commentList">
+            <div class="comment">
+              <span>嘉然今天吃什么</span>
+              <span></span>
+            </div>
+            <span>nmsl</span>
+            <span>nmsl</span>
+            <span>nmsl</span>
+            <span>nmsl</span>
+            <span>nmsl</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

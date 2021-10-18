@@ -169,8 +169,7 @@ export class AppProductList implements OnInit {
       // If we need pagination
       pagination: {
         el: '.swiper-pagination'
-      },
-      
+      }
     });
 
     swiper.on('slideChange', () => {

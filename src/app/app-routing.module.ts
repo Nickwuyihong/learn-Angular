@@ -14,9 +14,9 @@ const routes: Routes = [
     component: AppProductList,
     children: [
       { path: 'bill', component: BillComponent },
-      { path: 'play-audio', component: PlayAudioComponent },
     ]
   },
+  { path: 'play-audio', component: PlayAudioComponent },
   { path: 'learn-svg', component: SVGComponent },
   { path: 'my', component: MyComponent },
   { path: 'not-found', component: NotFoundComponent },
