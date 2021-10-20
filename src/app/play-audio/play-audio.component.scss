@@ -36,6 +36,12 @@
         height: 11px;
         margin: 6px;
       }
+      .arr-up {
+        transform: rotate(180deg);
+      }
+      .arr-down {
+        transform: rotate(0);
+      }
     }
     .up{
       display: flex;
@@ -194,6 +200,106 @@
                 -webkit-box-orient: vertical;
               }
             }
+          }
+        }
+        .commentList {
+          display: flex;
+          flex-direction: column;
+          .comment {
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px #f2f2f2 solid;
+            .comment-left {
+              width: 15%;
+              height: 100%;
+              > img {
+                height: 8vw;
+                width: 8vw;
+                border-radius: 4vw;
+                margin-top: 10px;
+              }
+            }
+            .comment-right {
+              width: 85%;
+              height: 100%;
+              .top {
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .top-left {
+                  display: flex;
+                  flex-direction: column;
+                  .name {
+                    font-size: 3.46667vw;
+                    color: #757575;
+                  }
+                  .date {
+                    font-size: 3.2vw;
+                    height: 3.2vw;
+                    line-height: 3.2vw;
+                    color: #999;
+                  }
+                }
+                .top-right {
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  > span {
+                    font-size: 2.66667vw;
+                    color: #999;
+                  }
+                }
+              }
+              .mid {
+                width: 100%;
+                max-height: 400px;
+                display: flex;
+                flex-direction: column;
+                padding: 10px 0;
+                > span {
+                  font-size: 3.46667vw;
+                  color: #212121;
+                  white-space: pre-line;
+                  word-break: break-word;
+                }
+              }
+              .bottom {
+                width: 100%;
+                max-height: 300px;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                background: #f4f4f4;
+                .reply {
+                  color: #212121;
+                  margin: 1.6vw 0 0;
+                  font-size: 3.46667vw;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 2;
+                  .replyer {
+                    color: #5090cc;
+                  }
+                }
+                .total {
+                  display: block;
+                  margin-top: 2.13333vw;
+                  font-size: 3.2vw;
+                  color: #5090cc;
+                }
+              }
+            }
+          }
+        }
+        .list-bottom {
+          width: 100%;
+          display: flex;
+          > span {
+            margin: auto;
+            color: #999;
           }
         }
       }

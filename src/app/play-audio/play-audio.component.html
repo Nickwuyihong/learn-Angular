@@ -6,7 +6,7 @@
   <div class="content">
     <div class="title">
       <h1>猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒</h1>
-      <img src="../../assets/image/classification_down.png" alt="down" (click)="onChange($event)">
+      <img class="{{isDetail ? 'arr-up' : 'arr-down'}}" src="../../assets/image/classification_down.png" alt="down" (click)="onChange($event)">
     </div>
     <div class="up">
       <div class="left">
@@ -48,15 +48,37 @@
         </div>
         <div class="swiper-slide">
           <div class="commentList">
-            <div class="comment">
-              <span>嘉然今天吃什么</span>
-              <span></span>
+            <div class="comment" *ngFor="let c of commentList">
+              <div class="comment-left">
+                <img src="{{c.userImg}}" alt="">
+              </div>
+              <div class="comment-right">
+                <div class="top">
+                  <div class="top-left">
+                    <span class="name">{{c.userName}}</span>
+                    <span class="date">{{c.time}}</span>
+                  </div>
+                  <div class="top-right">
+                    <span>赞：{{c.like}}</span>
+                  </div>
+                </div>
+                <div class="mid">
+                  <span>{{c.content}}</span>
+                </div>
+                <div *ngIf="c.reply" class="bottom">
+                  <div *ngFor="let r of c.reply; index as i;">
+                    <div *ngIf="i < 2" class="reply">
+                      <span class="replyer">{{r.userName}}：</span>
+                      <span class="re-content">{{r.content}}</span>
+                    </div>
+                  </div>
+                  <span *ngIf="c.reply.length > 1" class="total">共{{c.reply.length}}条回复></span>
+                </div>
+              </div>
             </div>
-            <span>nmsl</span>
-            <span>nmsl</span>
-            <span>nmsl</span>
-            <span>nmsl</span>
-            <span>nmsl</span>
+          </div>
+          <div class="list-bottom">
+            <span>——————到底了——————</span>
           </div>
         </div>
       </div>

@@ -2,6 +2,15 @@ import { Component, OnInit } from "@angular/core";
 import { Audio } from "../app-product-list/app-product-list.component";
 declare let Swiper: any;
 
+export interface comment {
+  userName: string,
+  userImg: string,
+  time: string,
+  content: string,
+  like: number,
+  reply?: comment[]
+}
+
 @Component({
   selector: 'play-audio',
   styleUrls: ['./play-audio.component.scss'],
@@ -12,6 +21,8 @@ export class PlayAudioComponent implements OnInit {
   private audioList: Audio[];
   private swiper: any;
   public curIdx: number;
+  public commentList: comment[];
+  public isDetail: boolean;
 
   constructor(){
     this.swiper = {};
@@ -90,6 +101,99 @@ export class PlayAudioComponent implements OnInit {
         img: 'https://angular.cn/generated/images/guide/start/template-syntax-product-anchor.png'
       }
     ]
+    this.commentList = [
+      {
+        userName: '嘉然今天挂了么',
+        userImg: '../../assets/image/jiaran.jpg',
+        time: '4-6',
+        content: '柠檬什么时候酸\n该用什么创死你好😊',
+        like: 114,
+        reply: [
+          {
+            userName: '嘉然令天吃什么0',
+            userImg: '../../assets/image/jiaran.jpg',
+            time: '4-10',
+            content: '你再想想🤬',
+            like: 114
+          },
+          {
+            userName: '嘉然令天吃什么1',
+            userImg: '../../assets/image/jiaran.jpg',
+            time: '5-6',
+            content: '你再想想🤬',
+            like: 123
+          },
+          {
+            userName: '嘉然令天吃什么2',
+            userImg: '../../assets/image/jiaran.jpg',
+            time: '6-6',
+            content: '你再想想🤬',
+            like: 514
+          },
+          {
+            userName: '嘉然令天吃什么3',
+            userImg: '../../assets/image/jiaran.jpg',
+            time: '7-6',
+            content: '你再想想🤬',
+            like: 523
+          },
+          {
+            userName: '嘉然令天吃什么4',
+            userImg: '../../assets/image/jiaran.jpg',
+            time: '8-6',
+            content: '你再想想🤬',
+            like: 634
+          },
+          {
+            userName: '嘉然令天吃什么5',
+            userImg: '../../assets/image/jiaran.jpg',
+            time: '9-6',
+            content: '你再想想🤬',
+            like: 810
+          }
+        ]
+      },
+      {
+        userName: '福睿控',
+        userImg: '../../assets/image/QQ图片20210927171929.jpg',
+        time: '4-6',
+        content: '鼠鼠我啊，可是要生气了🤬',
+        like: 342,
+        reply: [
+          {
+            userName: '时雨哥',
+            userImg: '../../assets/image/QQ图片20210927171937.jpg',
+            time: '4-12',
+            content: '你号没了',
+            like: 436
+          },
+          {
+            userName: '太阳哥',
+            userImg: '../../assets/image/QQ图片20210927171946.jpg',
+            time: '6-7',
+            content: '下个号见哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
+            like: 86
+          }
+        ]
+      },
+      {
+        userName: 'leria',
+        userImg: '../../assets/image/QQ图片20210927172017.png',
+        time: '4-16',
+        content: 'nick在哪呢',
+        like: 786,
+        reply: [
+          {
+            userName: 'nick',
+            userImg: '../../assets/image/QQ图片20210927172009.jpg',
+            time: '4-16',
+            content: '我在这啊广土',
+            like: 1223
+          }
+        ]
+      }
+    ]
+    this.isDetail = false;
   }
 
   getAudioList(): Audio[] {
@@ -112,6 +216,7 @@ export class PlayAudioComponent implements OnInit {
 
   onChange(event: any) {
     console.log('object', event)
+    this.isDetail = !this.isDetail;
   }
 
   changeSwiper(idx: number) {
