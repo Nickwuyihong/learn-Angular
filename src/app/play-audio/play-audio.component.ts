@@ -8,7 +8,8 @@ export interface comment {
   time: string,
   content: string,
   like: number,
-  reply?: comment[]
+  reply?: comment[],
+  render: number
 }
 
 @Component({
@@ -23,10 +24,14 @@ export class PlayAudioComponent implements OnInit {
   public curIdx: number;
   public commentList: comment[];
   public isDetail: boolean;
+  public col: number;
+  public renderList: any[];
 
   constructor(){
     this.swiper = {};
     this.curIdx = 0;
+    this.col = 0;
+    this.renderList = []
     this.audioList = [
       {
         id: 114,
@@ -108,48 +113,55 @@ export class PlayAudioComponent implements OnInit {
         time: '4-6',
         content: '柠檬什么时候酸\n该用什么创死你好😊',
         like: 114,
+        render: 0,
         reply: [
           {
             userName: '嘉然令天吃什么0',
             userImg: '../../assets/image/jiaran.jpg',
             time: '4-10',
             content: '你再想想🤬',
-            like: 114
+            like: 114,
+            render: 0,
           },
           {
             userName: '嘉然令天吃什么1',
             userImg: '../../assets/image/jiaran.jpg',
             time: '5-6',
             content: '你再想想🤬',
-            like: 123
+            like: 123,
+            render: 0,
           },
           {
             userName: '嘉然令天吃什么2',
             userImg: '../../assets/image/jiaran.jpg',
             time: '6-6',
             content: '你再想想🤬',
-            like: 514
+            like: 514,
+            render: 0,
           },
           {
             userName: '嘉然令天吃什么3',
             userImg: '../../assets/image/jiaran.jpg',
             time: '7-6',
             content: '你再想想🤬',
-            like: 523
+            like: 523,
+            render: 0,
           },
           {
             userName: '嘉然令天吃什么4',
             userImg: '../../assets/image/jiaran.jpg',
             time: '8-6',
             content: '你再想想🤬',
-            like: 634
+            like: 634,
+            render: 0,
           },
           {
             userName: '嘉然令天吃什么5',
             userImg: '../../assets/image/jiaran.jpg',
             time: '9-6',
             content: '你再想想🤬',
-            like: 810
+            like: 810,
+            render: 0,
           }
         ]
       },
@@ -159,20 +171,23 @@ export class PlayAudioComponent implements OnInit {
         time: '4-6',
         content: '鼠鼠我啊，可是要生气了🤬',
         like: 342,
+        render: 0,
         reply: [
           {
             userName: '时雨哥',
             userImg: '../../assets/image/QQ图片20210927171937.jpg',
             time: '4-12',
             content: '你号没了',
-            like: 436
+            like: 436,
+            render: 0,
           },
           {
             userName: '太阳哥',
             userImg: '../../assets/image/QQ图片20210927171946.jpg',
             time: '6-7',
             content: '下个号见哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
-            like: 86
+            like: 86,
+            render: 0,
           }
         ]
       },
@@ -182,13 +197,15 @@ export class PlayAudioComponent implements OnInit {
         time: '4-16',
         content: 'nick在哪呢',
         like: 786,
+        render: 0,
         reply: [
           {
             userName: 'nick',
             userImg: '../../assets/image/QQ图片20210927172009.jpg',
             time: '4-16',
             content: '我在这啊广土',
-            like: 1223
+            like: 1223,
+            render: 0,
           }
         ]
       }
@@ -211,6 +228,7 @@ export class PlayAudioComponent implements OnInit {
       console.log('slide changed', e)
       this.curIdx = e.activeIndex;
     })
+    this.initData();
   }
 
 
@@ -223,5 +241,27 @@ export class PlayAudioComponent implements OnInit {
     console.log(idx);
     this.curIdx = idx;
     this.swiper.slideTo(idx);
+  }
+
+  initData() {
+    for (let i of this.commentList) {
+      if (i.reply) {
+        let col = 0;
+        let render = 0;
+        for (let j of i.reply) {
+          console.log(j)
+          if (j.userName.length + j.content.length > 20) {
+            col+=2;
+          } else {
+            col++;
+          }
+          if (col < 5) {
+            render++;
+          }
+        }
+        i.render = render;
+      }
+    }
+    console.log(this.commentList);
   }
 }

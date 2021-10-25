@@ -266,11 +266,11 @@
               }
               .bottom {
                 width: 100%;
-                max-height: 300px;
                 display: flex;
                 flex-direction: column;
                 padding: 10px;
                 background: #f4f4f4;
+                overflow: hidden;
                 .reply {
                   color: #212121;
                   margin: 1.6vw 0 0;

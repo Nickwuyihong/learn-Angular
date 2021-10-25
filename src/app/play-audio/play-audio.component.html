@@ -8,7 +8,7 @@
       <h1>猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒</h1>
       <img class="{{isDetail ? 'arr-up' : 'arr-down'}}" src="../../assets/image/classification_down.png" alt="down" (click)="onChange($event)">
     </div>
-    <div class="up">
+    <div *ngIf="!isDetail;else elseBlock" class="up">
       <div class="left">
         <img src="../../assets/image/jiaran.jpg" alt="">
         <span>嘉然今天吃什么</span>
@@ -19,6 +19,11 @@
         <span>收藏</span>
       </div>
     </div>
+    <ng-template #elseBlock>
+      <div class="up-detail">
+        
+      </div>
+    </ng-template>
     <div class="switcher">
       <span class="{{curIdx === 0 ? 'pik' : 'blk'}}" (click)="changeSwiper(0)">相关推荐</span>
       <span class="{{curIdx === 1 ? 'pik' : 'blk'}}" (click)="changeSwiper(1)">评论18.5w</span>
@@ -66,8 +71,8 @@
                   <span>{{c.content}}</span>
                 </div>
                 <div *ngIf="c.reply" class="bottom">
-                  <div *ngFor="let r of c.reply; index as i;">
-                    <div *ngIf="i < 2" class="reply">
+                  <div *ngFor="let r of c.reply; index as i;first as f; last as l;">
+                    <div *ngIf="i < c.render" class="reply">
                       <span class="replyer">{{r.userName}}：</span>
                       <span class="re-content">{{r.content}}</span>
                     </div>
@@ -76,6 +81,7 @@
                 </div>
               </div>
             </div>
+
           </div>
           <div class="list-bottom">
             <span>——————到底了——————</span>
