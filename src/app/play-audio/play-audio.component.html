@@ -5,7 +5,7 @@
   </video>
   <div class="content">
     <div class="title">
-      <h1>猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒</h1>
+      <h1 class="{{isDetail ? 'all' : ''}}">猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒猫中毒</h1>
       <img class="{{isDetail ? 'arr-up' : 'arr-down'}}" src="../../assets/image/classification_down.png" alt="down" (click)="onChange($event)">
     </div>
     <div *ngIf="!isDetail;else elseBlock" class="up">
@@ -21,7 +21,35 @@
     </div>
     <ng-template #elseBlock>
       <div class="up-detail">
-        
+        <div class="up-detail-head">
+          <img src="../../assets/image/jiaran.jpg" alt="">
+          <div class="info">
+            <span class="detail-name">嘉然今天吃什么</span>
+            <span class="detail-fans">17.3w粉丝</span>
+          </div>
+        </div>
+        <div class="follow">
+          <span>关注</span>
+        </div>
+      </div>
+      <div class="data">
+        <span>24.8万观看</span>
+        <span>1980弹幕</span>
+        <span>昨天</span>
+        <span>BV1SQ4y1U7dw</span>
+      </div>
+      <span class="data">未经作者授权禁止转载</span>
+      <p class="desc">
+        【求三连关注和转发】【求三连关注和转发】【求三连关注和转发】
+        策划、文案、配音、制作：肉肉
+        字幕校对：小莫、小司 图表制作：枫之雨
+        BGM：倉木麻衣,塞壬唱片-MSR - Proof of being alive
+        官网链接：https://ak.hypergryph.com/news/2021100428.html
+      </p>
+      <div class="tool">
+        <span>3.1万 点赞</span>
+        <span>6171 收藏</span>
+        <span>114 缓存</span>
       </div>
     </ng-template>
     <div class="switcher">
