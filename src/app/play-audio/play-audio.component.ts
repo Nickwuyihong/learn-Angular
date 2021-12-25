@@ -2,13 +2,45 @@ import { Component, OnInit } from "@angular/core";
 import { Audio } from "../app-product-list/app-product-list.component";
 declare let Swiper: any;
 
+
+/**
+ * 评论
+ */
 export interface comment {
+  
+  /**
+   * 用户昵称
+   */
   userName: string,
+
+  /**
+   * 用户头像
+   */
   userImg: string,
+
+  /**
+   * 评论时间
+   */
   time: string,
+  
+  /**
+   * 评论内容
+   */
   content: string,
+  
+  /**
+   * 点赞数
+   */
   like: number,
+
+  /**
+   * 回复列表
+   */
   reply?: comment[],
+
+  /**
+   * 回复渲染条数
+   */
   render: number
 }
 
@@ -19,19 +51,43 @@ export interface comment {
 })
 
 export class PlayAudioComponent implements OnInit {
+  
+  /**
+   * 推荐视频列表
+   */
   private audioList: Audio[];
+  
+  /**
+   * 切换页
+   */
   private swiper: any;
+  
+  /**
+   * 当前页
+   */
   public curIdx: number;
-  public commentList: comment[];
-  public isDetail: boolean;
-  public col: number;
-  public renderList: any[];
 
+  /**
+   * 评论列表
+   */
+  public commentList: comment[];
+
+  /**
+   * up详情切换
+   */
+  public isDetail: boolean;
+  
+  /**
+   * 视频信息
+   */
+  public videoInfo: any;
+
+  /**
+   * 初始化数据
+   */
   constructor(){
     this.swiper = {};
     this.curIdx = 0;
-    this.col = 0;
-    this.renderList = []
     this.audioList = [
       {
         id: 114,
@@ -211,6 +267,20 @@ export class PlayAudioComponent implements OnInit {
       }
     ]
     this.isDetail = false;
+    this.videoInfo = {
+      BV: 'string',
+      url: 'string',
+      cover: 'string',
+      like: 114514,
+      coins: 114514,
+      fork: 114514,
+      playTimes: 114514,
+      date: '2021-10-29',
+      up: {
+        headUrl: 'string',
+        follow: 114514
+      }
+    }
   }
 
   getAudioList(): Audio[] {
