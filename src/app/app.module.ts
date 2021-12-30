@@ -18,6 +18,8 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import { PlayAudioComponent } from './play-audio/play-audio.component';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +32,16 @@ import { PlayAudioComponent } from './play-audio/play-audio.component';
     NotFoundComponent,
     MyComponent,
     Ishiyoniikuikuiku,
-    PlayAudioComponent
+    PlayAudioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SwiperModule
+    SwiperModule,
+    FormsModule
   ],
   exports: [Ishiyoniikuikuiku],
   providers: [],

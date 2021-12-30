@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppProductList } from './app-product-list/app-product-list.component';
 import { BillComponent } from './bill/bill.component';
 import { SVGComponent } from './learn-svg/svg.component';
+import { LoginComponent } from './login/login.component';
 import { MyComponent } from './my/my.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PlayAudioComponent } from './play-audio/play-audio.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'learn-svg', component: SVGComponent },
   { path: 'my', component: MyComponent },
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
